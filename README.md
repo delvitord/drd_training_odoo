@@ -3,6 +3,9 @@
 ## Description
 This project is a training repository for learning Odoo, an open-source ERP and CRM platform. It contains various modules and exercises to help users understand and practice different aspects of Odoo development.
 
+## Created By
+Delvito Rahim Derivansyah | Backend Engineer Intern at PT. NTI | D4 Teknik Informatika, Politeknik Negeri Bandung
+
 ## Installation
 1. Clone the repository: `git clone https://github.com/delvitord/training_odoo.git`
 2. Set up the odoo.conf in field addons_path: `./training_odoo`
