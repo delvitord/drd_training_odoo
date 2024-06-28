@@ -17,5 +17,5 @@ class Bus(models.Model):
     name = fields.Char(string='Name')
     code = fields.Char(string='Code')
     capacity = fields.Integer(string='Capacity')
-    image = fields.Image(string='Image')
+    image = fields.Binary(string='Image')
     
