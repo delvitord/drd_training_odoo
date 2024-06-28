@@ -1,17 +1,17 @@
-# Project Name: drd_training_odoo
+# Project Name: Training Odoo
 
 ## Description
 This project is a training repository for learning Odoo, an open-source ERP and CRM platform. It contains various modules and exercises to help users understand and practice different aspects of Odoo development.
 
 ## Installation
-1. Clone the repository: `git clone https://github.com/delvitord/drd_training_odoo.git`
-2. Set up the odoo.conf in field addons_path: `./drd_training_odoo`
+1. Clone the repository: `git clone https://github.com/delvitord/training_odoo.git`
+2. Set up the odoo.conf in field addons_path: `./training_odoo`
 
 ## Usage
-1. Start the Odoo server: `./odoo-bin`
+1. Start the Odoo server
 2. Open your web browser and go to `http://localhost:8069`
 3. Log in with the provided credentials
-4. Explore the different modules and exercises available in the training repository
+4. In the apps menu, search `training_odoo` and install the module that you need
 
 ## Contributing
 Contributions are welcome! If you find any issues or have suggestions for improvements, please create a new issue or submit a pull request.
