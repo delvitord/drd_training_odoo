@@ -1,5 +1,3 @@
--*- coding: utf-8 -*-
-
 from odoo import models, fields 
 
 class BusRoute(models.Model):
