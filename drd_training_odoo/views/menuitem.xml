@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="bus_schedule_action" model="ir.actions.act_window">
+            <field name="name">Bus Schedule</field>
+            <field name="res_model">bus.schedule</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="passenger_action" model="ir.actions.act_window">
+            <field name="name">Passenger</field>
+            <field name="res_model">bus.passenger</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem
+            id="transpotation_root_menu"
+            name="Transpotation"
+            web_icon="drd_training_odoo,static/description/icon.png"
+        />
+        <menuitem
+            id="bus_schedule_menu"
+            name="Schedule"
+            parent="drd_training_odoo.transpotation_root_menu"
+            action="bus_schedule_action"
+            sequence="1"
+        />
+        <menuitem
+            id="passenger_menu"
+            name="Passenger"
+            parent="drd_training_odoo.transpotation_root_menu"
+            action="passenger_action"
+            sequence="2"
+        />
+    </data>
+</odoo>

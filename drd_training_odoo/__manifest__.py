@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "drd_training_odoo",
+    'name': "Training Odoo (Delvito)",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Training Odoo by Delvito""",
 
     'description': """
-        Long description of module's purpose
+        This module provides training materials and resources for learning Odoo. It includes various views for managing bus schedules, HR employees, and menu items. It depends on the 'base' and 'hr' modules. The module also includes security settings and a demonstration mode with demo data.
     """,
 
-    'author': "My Company",
-    'website': "https://www.yourcompany.com",
+    'author': "Delvito Rahim Derivansyah",
+    'website': "https://github.com/delvitord",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/16.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -24,9 +23,10 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/ir.model.access.csv',
+        'views/bus_schedule_view.xml',
+        'views/menuitem.xml',
+        'views/hr_employee_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

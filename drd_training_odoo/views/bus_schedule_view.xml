@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record model="ir.ui.view" id="bus_schedule_view_tree">
+            <field name="name">bus.schedule.view.tree</field>
+            <field name="model">bus.schedule</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="schedule"/>
+                    <field name="departure"/>
+                    <field name="arrival"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record model="ir.ui.view" id="bus_schedule_view_form">
+            <field name="name">bus_schedule_view_form</field>
+            <field name="model">bus.schedule</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_title"> 
+                            <h1> 
+                                <field name="name" /> 
+                            </h1> 
+                        </div>
+                        <group>
+                            <group>
+                                <field name="schedule"/>
+                                <field name="payment_type"/>
+                            </group>
+                            <group>
+                                <field name="departure"/>
+                                <field name="arrival"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
