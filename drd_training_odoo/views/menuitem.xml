@@ -27,17 +27,17 @@
             web_icon="drd_training_odoo,static/description/icon.png"
         />
         <menuitem
-            id="bus_schedule_menu"
-            name="Schedule"
-            parent="drd_training_odoo.transpotation_root_menu"
-            action="bus_schedule_action"
-            sequence="1"
-        />
-        <menuitem
             id="passenger_menu"
             name="Passenger"
             parent="drd_training_odoo.transpotation_root_menu"
             action="passenger_action"
+            sequence="1"
+        />
+        <menuitem
+            id="bus_schedule_menu"
+            name="Schedule"
+            parent="drd_training_odoo.transpotation_root_menu"
+            action="bus_schedule_action"
             sequence="2"
         />
         <menuitem
