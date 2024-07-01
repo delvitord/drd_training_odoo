@@ -1,4 +1,4 @@
-from odoo import models, fields 
+from odoo import models, fields, api
 
 class BusSchedule(models.Model):
     """
@@ -21,3 +21,16 @@ class BusSchedule(models.Model):
     ], string='Payment')
     departure = fields.Datetime(string='Departure')
     arrival = fields.Datetime(string='Arrival')
+    bus_id = fields.Many2one('res.bus', string='Bus')
+    
+    @api.onchange('departure', 'arrival')
+    def _onchange_departure_arrival(self):
+        if self.departure and self.arrival and self.departure > self.arrival:
+            self.arrival = self.departure
+            return {
+                'warning': {
+                    'title': "Invalid date",
+                    'message': "Arrival date must be greater than departure date.",
+                },
+            }
+            

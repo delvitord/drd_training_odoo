@@ -1,4 +1,4 @@
-from odoo import models, fields 
+from odoo import models, fields, api
 
 class Bus(models.Model):
     """
@@ -16,4 +16,10 @@ class Bus(models.Model):
     code = fields.Char(string='Code')
     capacity = fields.Integer(string='Capacity')
     image = fields.Binary(string='Image')
+    schedule_ids = fields.One2many('bus.schedule', 'bus_id', string='Schedule')    
+
+    @api.model
+    def create(self, vals):
+        vals['code'] = self.env['ir.sequence'].next_by_code('res.bus') or '/'
+        return super(Bus, self).create(vals)
     

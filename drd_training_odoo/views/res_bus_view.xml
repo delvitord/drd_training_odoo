@@ -10,6 +10,14 @@
                     <field name="name"/>
                     <field name="code"/>
                     <field name="capacity"/>
+                    <field name="schedule_ids">
+                        <tree editable="bottom">
+                            <field name="name"/>
+                            <field name="schedule"/>
+                            <field name="departure"/>
+                            <field name="arrival"/>
+                        </tree>
+                    </field>
                 </tree>
             </field>
         </record>
@@ -33,7 +41,6 @@
                         </div>
                         <group>
                             <group>
-                                <field name="code"/>
                                 <field name="capacity"/>
                             </group>
                             <group>

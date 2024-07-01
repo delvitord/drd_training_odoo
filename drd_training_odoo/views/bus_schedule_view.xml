@@ -33,6 +33,7 @@
                             <group>
                                 <field name="schedule"/>
                                 <field name="payment_type"/>
+                                <field name="bus_id"/>
                             </group>
                             <group>
                                 <field name="departure"/>

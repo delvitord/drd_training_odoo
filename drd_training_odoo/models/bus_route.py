@@ -10,3 +10,4 @@ class BusRoute(models.Model):
     _description = 'Bus Route'
     
     name = fields.Char(string='Name')
+    passenger_ids = fields.Many2many('res.passenger', string='Passenger')
