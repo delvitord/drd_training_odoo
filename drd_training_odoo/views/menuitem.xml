@@ -8,7 +8,7 @@
         </record>
         <record id="passenger_action" model="ir.actions.act_window">
             <field name="name">Passenger</field>
-            <field name="res_model">bus.passenger</field>
+            <field name="res_model">res.passenger</field>
             <field name="view_mode">tree,form</field>
         </record>
         <menuitem

@@ -1,3 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_bus_schedule,access_bus_schedule,model_bus_schedule,base.group_user,1,1,1,1
-access_passenger,access_passenger,model_pasanger_base.group_user,1,1,1,1
+access_passenger,access_passenger,model_res_passenger,base.group_user,1,1,1,1

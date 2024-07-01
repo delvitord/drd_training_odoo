@@ -2,23 +2,23 @@
 <odoo>
     <data>
         <!-- List View -->
-        <record model="ir.ui.view" id="bus_schedule_view_tree">
-            <field name="name">bus.schedule.view.tree</field>
-            <field name="model">bus.schedule</field>
+        <record model="ir.ui.view" id="passenger_view_tree">
+            <field name="name">passenger.view.tree</field>
+            <field name="model">res.passenger</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name="schedule"/>
-                    <field name="departure"/>
-                    <field name="arrival"/>
+                    <field name="weight"/>
+                    <field name="height"/>
+                    <field name="born_date"/>
                 </tree>
             </field>
         </record>
         
         <!-- Form View -->
-        <record model="ir.ui.view" id="bus_schedule_view_form">
-            <field name="name">bus_schedule_view_form</field>
-            <field name="model">bus.schedule</field>
+        <record model="ir.ui.view" id="passenger_view_form">
+            <field name="name">passenger_view_form</field>
+            <field name="model">res.passenger</field>
             <field name="arch" type="xml">
                 <form>
                     <header>
@@ -26,17 +26,16 @@
                     <sheet>
                         <div class="oe_title"> 
                             <h1> 
-                                <field name="name" placeholder="Schedule's Name"/> 
-                            </h1> 
+                                <field name="name" placeholder="Passenger's Name" /> 
+                            </h1>
                         </div>
                         <group>
                             <group>
-                                <field name="schedule"/>
-                                <field name="payment_type"/>
+                                <field name="weight"/>
+                                <field name="height"/>
                             </group>
                             <group>
-                                <field name="departure"/>
-                                <field name="arrival"/>
+                                <field name="born_date"/>
                             </group>
                         </group>
                     </sheet>

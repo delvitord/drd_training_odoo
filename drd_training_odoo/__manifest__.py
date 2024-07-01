@@ -27,6 +27,7 @@
         'views/bus_schedule_view.xml',
         'views/menuitem.xml',
         'views/hr_employee_view.xml',
+        'views/passenger_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
