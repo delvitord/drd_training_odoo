@@ -3,10 +3,10 @@
     'name': "Training Odoo (Delvito)",
 
     'summary': """
-        Training Odoo by Delvito""",
-
+        This module provides training materials and resources for learning Odoo. It includes various views for managing bus schedules, HR employees, and menu items.""",
+        
     'description': """
-        This module provides training materials and resources for learning Odoo. It includes various views for managing bus schedules, HR employees, and menu items. It depends on the 'base' and 'hr' modules. The module also includes security settings and a demonstration mode with demo data.
+        The module provides training materials and resources for learning Odoo. It includes various views for managing bus schedules, HR employees, and menu items. It also allows users to view and manage passenger information, bus details, and bus routes. This module is designed to enhance the transportation management capabilities of Odoo and improve the overall efficiency of transportation operations.
     """,
 
     'author': "Delvito Rahim Derivansyah",
@@ -15,7 +15,7 @@
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/16.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Transportation',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
@@ -24,12 +24,12 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/bus_schedule_view.xml',
-        'views/menuitem.xml',
-        'views/hr_employee_view.xml',
         'views/passenger_view.xml',
+        'views/bus_schedule_view.xml',
         'views/bus_view.xml',
         'views/bus_route_view.xml',
+        'views/hr_employee_view.xml',
+        'views/menuitem.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
