@@ -28,6 +28,8 @@
         'views/menuitem.xml',
         'views/hr_employee_view.xml',
         'views/passenger_view.xml',
+        'views/bus_view.xml',
+        'views/bus_route_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

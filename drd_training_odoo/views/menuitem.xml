@@ -11,6 +11,16 @@
             <field name="res_model">res.passenger</field>
             <field name="view_mode">tree,form</field>
         </record>
+        <record id="bus_action" model="ir.actions.act_window">
+            <field name="name">Bus</field>
+            <field name="res_model">res.bus</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record id="bus_route_action" model="ir.actions.act_window">
+            <field name="name">Bus Route</field>
+            <field name="res_model">bus.route</field>
+            <field name="view_mode">tree,form</field>
+        </record>
         <menuitem
             id="transpotation_root_menu"
             name="Transpotation"
@@ -29,6 +39,26 @@
             parent="drd_training_odoo.transpotation_root_menu"
             action="passenger_action"
             sequence="2"
+        />
+        <menuitem
+            id="bus_menu"
+            name="Bus"
+            parent="drd_training_odoo.transpotation_root_menu"
+            action="bus_action"
+            sequence="3"
+        />
+        <menuitem
+            id="configuration_menu"
+            name="Configuration"
+            parent="drd_training_odoo.transpotation_root_menu"
+            sequence="4"
+        />
+        <menuitem
+            id="bus_route_menu"
+            name="Route"
+            parent="drd_training_odoo.configuration_menu"
+            action="bus_route_action"
+            sequence="5"
         />
     </data>
 </odoo>

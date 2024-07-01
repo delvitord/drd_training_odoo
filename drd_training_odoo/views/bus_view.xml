@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- List View -->
+        <record model="ir.ui.view" id="bus_view_tree">
+            <field name="name">bus.view.tree</field>
+            <field name="model">res.bus</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="capacity"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Form View -->
+        <record model="ir.ui.view" id="bus_view_form">
+            <field name="name">bus.view.form</field>
+            <field name="model">res.bus</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_title" style="display: flex; justify-content: space-between; align-items: center;">
+                            <h1 style="flex: 1; text-align: left;">
+                                <field name="name" placeholder="Bus's Name"/>
+                            </h1>
+                            <div style="flex: 0 0 auto;">
+                                <field name="image" widget="image" options="{'size': [90, 90], 'placeholder': 'static/description/placeholder.png'}"/>
+                            </div>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="code"/>
+                                <field name="capacity"/>
+                            </group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
