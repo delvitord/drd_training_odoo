@@ -17,7 +17,7 @@
         
         <!-- Form View -->
         <record model="ir.ui.view" id="bus_schedule_view_form">
-            <field name="name">bus_schedule_view_form</field>
+            <field name="name">bus.schedule.view.form</field>
             <field name="model">bus.schedule</field>
             <field name="arch" type="xml">
                 <form>

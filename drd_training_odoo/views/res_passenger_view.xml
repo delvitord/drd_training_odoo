@@ -2,8 +2,8 @@
 <odoo>
     <data>
         <!-- List View -->
-        <record model="ir.ui.view" id="passenger_view_tree">
-            <field name="name">passenger.view.tree</field>
+        <record model="ir.ui.view" id="res_passenger_view_tree">
+            <field name="name">res.passenger.view.tree</field>
             <field name="model">res.passenger</field>
             <field name="arch" type="xml">
                 <tree>
@@ -16,8 +16,8 @@
         </record>
         
         <!-- Form View -->
-        <record model="ir.ui.view" id="passenger_view_form">
-            <field name="name">passenger_view_form</field>
+        <record model="ir.ui.view" id="res_passenger_view_form">
+            <field name="name">res.passenger.view.form</field>
             <field name="model">res.passenger</field>
             <field name="arch" type="xml">
                 <form>
