@@ -19,7 +19,7 @@ class BusSchedule(models.Model):
     bus_id = fields.Many2one(comodel_name='res.bus', string='Bus', required=True)
     route_id = fields.Many2one(comodel_name='bus.route', string='Route', required=True)
     passenger_ids = fields.Many2many(comodel_name='res.passenger', string='Passenger')
-    capacity = fields.Integer(string='Capacity', related='bus_id.capacity')
+    capacity = fields.Integer(string='Capacity', related='bus_id.capacity', readonly=True)
         
     @api.constrains('departure', 'arrival')
     def _check_departure_arrival(self):

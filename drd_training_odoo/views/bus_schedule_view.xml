@@ -35,6 +35,11 @@
                                 <h2>
                                     <field name="bus_id" placeholder="Bus's Name"/>
                                 </h2>
+                                
+                            </div>
+                            <div class="o_row">
+                                <p>Capacity: </p>
+                                <field name="capacity"/>
                             </div>
                             <div class="o_col oe_title_right">
                                 <h2>

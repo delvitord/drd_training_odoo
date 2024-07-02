@@ -21,11 +21,13 @@
                 <form>
                     <header>
                     </header>
+                    <div>
+                        <h1>
+                            <field name="name" placeholder="Baggage's Name"/>
+                        </h1>
+                    </div>
                     <sheet>
                         <group>
-                            <group>
-                                <field name="name"/>
-                            </group>
                             <group>
                                 <field name="weight"/>
                             </group>

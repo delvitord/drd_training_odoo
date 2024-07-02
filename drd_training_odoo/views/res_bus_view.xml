@@ -41,7 +41,7 @@
                         </group>
                         <notebook>
                             <page string="Schedule">
-                                <field name="schedule_ids">
+                                <field name="schedule_ids" readonly="1">
                                     <tree>
                                         <field name="name"/>
                                         <field name="date_of_issue"/>
