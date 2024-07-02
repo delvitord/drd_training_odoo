@@ -38,6 +38,7 @@
                             <group>
                                 <field name="departure"/>
                                 <field name="arrival"/>
+                                <field name="day_until_departure"/>
                             </group>
                         </group>
                     </sheet>

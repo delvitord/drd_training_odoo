@@ -1,14 +1,7 @@
 from odoo import models, fields, api
 
 class BusSchedule(models.Model):
-    """
-    Buat Model Bus Schedule dengan technical.name bus.schedule rincian field sebagai berikut:
-        a. name -> Type: Char, String: Name 
-        b. schedule -> Type: Datetime, String: Schedule 
-        c. payment_type -> Type: Selection, String: Payment, Selection: [(“cash”, “Cash”), (“transfer”, “Transfer”)] 
-        d. departure -> Type: Datetime, String: Departure 
-        e. arrival -> Type: Datetime, String: Arrival
-    """
+
     
     _name = 'bus.schedule'
     _description = 'Bus Schedule'
@@ -23,14 +16,11 @@ class BusSchedule(models.Model):
     arrival = fields.Datetime(string='Arrival')
     bus_id = fields.Many2one('res.bus', string='Bus')
     
-    @api.onchange('departure', 'arrival')
-    def _onchange_departure_arrival(self):
-        if self.departure and self.arrival and self.departure > self.arrival:
-            self.arrival = self.departure
-            return {
-                'warning': {
-                    'title': "Invalid date",
-                    'message': "Arrival date must be greater than departure date.",
-                },
-            }
-            
+    day_until_departure = fields.Integer(string='Day Until Departure', compute='_compute_day_until_departure')
+    
+    @api.depends('departure')
+    def _compute_day_until_departure(self):
+        for rec in self:
+            rec.day_until_departure = 0
+            if rec.departure:
+                rec.day_until_departure = (rec.departure - fields.Datetime.now()).days                
