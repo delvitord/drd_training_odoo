@@ -6,17 +6,17 @@ class BusSchedule(models.Model):
     _name = 'bus.schedule'
     _description = 'Bus Schedule'
     
-    name = fields.Char(string='Name')
+    name = fields.Char(string='Name', required=True)
     date_of_issue = fields.Date(string='Schedule', default=fields.Datetime.now, readonly=True)
     payment_type = fields.Selection([
         ('cash', 'Cash'),
         ('transfer', 'Transfer')
     ], string='Payment')
-    departure = fields.Datetime(string='Departure')
-    arrival = fields.Datetime(string='Arrival')
+    departure = fields.Datetime(string='Departure', required=True)
+    arrival = fields.Datetime(string='Arrival', required=True)
     
     baggage_ids = fields.One2many(comodel_name='baggage.baggage', inverse_name='schedule_id', string='Baggage')
-    bus_id = fields.Many2one(comodel_name='res.bus', string='Bus')
+    bus_id = fields.Many2one(comodel_name='res.bus', string='Bus', required=True)
     route_id = fields.Many2one(comodel_name='bus.route', string='Route')
     passenger_ids = fields.Many2many(comodel_name='res.passenger', string='Passenger')
     capacity = fields.Integer(string='Capacity', related='bus_id.capacity')

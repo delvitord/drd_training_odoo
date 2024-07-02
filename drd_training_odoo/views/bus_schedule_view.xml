@@ -11,6 +11,7 @@
                     <field name="date_of_issue"/>
                     <field name="departure"/>
                     <field name="arrival"/>
+                    <field name="capacity"/>
                 </tree>
             </field>
         </record>
@@ -28,6 +29,18 @@
                             <h1> 
                                 <field name="name" placeholder="Schedule's Name"/> 
                             </h1> 
+                        </div>
+                        <div class="o_row oe_title">
+                            <div class="o_col oe_title_left">
+                                <h2>
+                                    <field name="bus_id" placeholder="Bus's Name"/>
+                                </h2>
+                            </div>
+                            <div class="o_col oe_title_right">
+                                <h2>
+                                    <field name="route_id" placeholder="Route's Name"/>
+                                </h2>
+                            </div>
                         </div>
                         <group>
                             <group>

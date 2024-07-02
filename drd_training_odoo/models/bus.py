@@ -8,9 +8,9 @@ class Bus(models.Model):
         ('bus_code_unique', 'unique(code)', 'Code must be unique')
     ]
     
-    name = fields.Char(string='Name')
+    name = fields.Char(string='Name', required=True)
     code = fields.Char(string='Code')
-    capacity = fields.Integer(string='Capacity')
+    capacity = fields.Integer(string='Capacity', required=True)
     image = fields.Binary(string='Image')
     
     schedule_ids = fields.One2many(comodel_name='bus.schedule', inverse_name='bus_id', string='Schedule')
