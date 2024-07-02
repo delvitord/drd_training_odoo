@@ -17,7 +17,7 @@ class BusSchedule(models.Model):
     
     baggage_ids = fields.One2many(comodel_name='baggage.baggage', inverse_name='schedule_id', string='Baggage')
     bus_id = fields.Many2one(comodel_name='res.bus', string='Bus', required=True)
-    route_id = fields.Many2one(comodel_name='bus.route', string='Route')
+    route_id = fields.Many2one(comodel_name='bus.route', string='Route', required=True)
     passenger_ids = fields.Many2many(comodel_name='res.passenger', string='Passenger')
     capacity = fields.Integer(string='Capacity', related='bus_id.capacity')
         
