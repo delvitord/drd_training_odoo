@@ -39,6 +39,18 @@
                             <group>
                             </group>
                         </group>
+                        <notebook>
+                            <page string="Schedule">
+                                <field name="schedule_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="date_of_issue"/>
+                                        <field name="departure"/>
+                                        <field name="arrival"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>

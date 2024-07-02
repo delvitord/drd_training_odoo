@@ -8,7 +8,7 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name="schedule"/>
+                    <field name="date_of_issue"/>
                     <field name="departure"/>
                     <field name="arrival"/>
                 </tree>
@@ -31,7 +31,7 @@
                         </div>
                         <group>
                             <group>
-                                <field name="schedule"/>
+                                <field name="date_of_issue"/>
                                 <field name="payment_type"/>
                             </group>
                             <group>
@@ -39,6 +39,26 @@
                                 <field name="arrival"/>
                             </group>
                         </group>
+                        <notebook>
+                            <page string="Baggage">
+                                <field name="baggage_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="weight"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Passenger">
+                                <field name="passenger_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="height"/>
+                                        <field name="weight"/>
+                                        <field name="born_date"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>

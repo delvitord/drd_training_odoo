@@ -30,6 +30,7 @@
         'views/bus_route_view.xml',
         'views/hr_employee_view.xml',
         'views/menuitem.xml',
+        'data/sequence.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -1,14 +1,7 @@
 from odoo import models, fields 
 
 class Passenger(models.Model):
-    """
-    Buat Model Passenger dengan technical name res.passenger memiliki rincian field sebagai berikut:
-        a. name -> Type: Char, String: Name 
-        b. weight -> Type: Float, String: Weight(Kg) 
-        c. height -> Type: Float, String: Height(Cm) 
-        d. born_date -> Type: Date, String: Born Date
-    """
-    
+
     _name = 'res.passenger'
     _description = 'Passenger'
     
