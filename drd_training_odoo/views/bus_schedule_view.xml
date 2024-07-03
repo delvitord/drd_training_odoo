@@ -93,11 +93,23 @@
                                 </group>
                                 
                             </page>
-
-                            
                         </notebook>
                     </sheet>
                 </form>
+            </field>
+        </record>
+
+        <!-- Search View -->
+        <record model="ir.ui.view" id="bus_schedule_view_search">
+            <field name="name">bus.schedule.view.search</field>
+            <field name="model">bus.schedule</field>
+            <field name="arch" type="xml">
+                <search>
+                    <filter string="Cash Payment" name="filter_cash_payment" domain="[('payment_type', '=', 'cash')]"/>
+                    <filter string="Transfer Payment" name="filter_transfer_payment" domain="[('payment_type', '=', 'transfer')]"/>
+
+                    
+                </search>
             </field>
         </record>
     </data>
