@@ -32,6 +32,8 @@
         'views/baggage_baggage_view.xml',
         'views/menuitem.xml',
         'data/sequence.xml',
+        'data/bus_data.xml',
+        'data/route_data.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

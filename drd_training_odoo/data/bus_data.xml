@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>    
+        <record model="res.bus" id="bus_1">
+            <field name="name">Budiman</field>
+            <field name="code">B001</field>
+            <field name="capacity">50</field>
+        </record>
+        <record model="res.bus" id="bus_2">
+            <field name="name">DAMRI</field>
+            <field name="code">B002</field>
+            <field name="capacity">50</field>
+        </record>
+        <record model="res.bus" id="bus_3">
+            <field name="name">Primajasa</field>
+            <field name="code">B003</field>
+            <field name="capacity">50</field>
+        </record>
+        <record model="res.bus" id="bus_4">
+            <field name="name">Rosalia Indah</field>
+            <field name="code">B004</field>
+            <field name="capacity">50</field>
+        </record>
+        <record model="res.bus" id="bus_5">
+            <field name="name">Kramat Djati</field>
+            <field name="code">B005</field>
+            <field name="capacity">50</field>
+        </record>        
+    </data>
+</odoo>
