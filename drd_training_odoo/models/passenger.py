@@ -1,4 +1,4 @@
-from odoo import models, fields 
+from odoo import models, fields, api
 
 class Passenger(models.Model):
 
@@ -9,3 +9,15 @@ class Passenger(models.Model):
     weight = fields.Float(string='Weight(Kg)', required=True)
     height = fields.Float(string='Height(Cm)', required=True)
     born_date = fields.Date(string='Born Date', required=True)
+    
+    age = fields.Integer(string='Age', compute='_compute_age')
+
+    @api.depends('born_date')
+    def _compute_age(self):
+        for rec in self:
+            if rec.born_date:
+                today = fields.Date.today()
+                age = today.year - rec.born_date.year - ((today.month, today.day) < (rec.born_date.month, rec.born_date.day))
+                rec.age = age
+            else:
+                rec.age = 0
