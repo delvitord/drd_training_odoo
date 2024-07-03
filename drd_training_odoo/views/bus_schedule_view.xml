@@ -12,6 +12,9 @@
                     <field name="departure"/>
                     <field name="arrival"/>
                     <field name="capacity"/>
+                    <field name="payment_type"/>
+                    <field name="bus_id"/>
+                    <field name="route_id"/>
                 </tree>
             </field>
         </record>
@@ -79,7 +82,7 @@
                                     </tree>
                                 </field>
                             </page>
-                             <page string="Driver">
+                             <page string="Driver Information">
                                 <div>
                                     <h1>
                                         <field name="driver_id" placeholder="Driver's Name" readonly="1" attrs="{'invisible': [('driver_id', '=', False)]}"/>
@@ -104,11 +107,20 @@
             <field name="name">bus.schedule.view.search</field>
             <field name="model">bus.schedule</field>
             <field name="arch" type="xml">
-                <search>
+                <search string="Bus Schedule Search">
+                    <field name="name"/>
+                    <field name="route_id"/>
+                    <field name="bus_id"/>
+
                     <filter string="Cash Payment" name="filter_cash_payment" domain="[('payment_type', '=', 'cash')]"/>
                     <filter string="Transfer Payment" name="filter_transfer_payment" domain="[('payment_type', '=', 'transfer')]"/>
 
-                    
+                    <group expand="1" string="Group By">
+                        <filter string="Route" name="group_route" context="{'group_by': 'route_id'}"/>
+                        <filter string="Bus" name="group_bus" context="{'group_by': 'bus_id'}"/>
+                    </group>
+
+
                 </search>
             </field>
         </record>
