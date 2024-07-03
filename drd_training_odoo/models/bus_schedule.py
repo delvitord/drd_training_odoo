@@ -20,6 +20,15 @@ class BusSchedule(models.Model):
     route_id = fields.Many2one(comodel_name='bus.route', string='Route', required=True)
     passenger_ids = fields.Many2many(comodel_name='res.passenger', string='Passenger')
     capacity = fields.Integer(string='Capacity', related='bus_id.capacity', readonly=True)
+    driver_id = fields.Many2one(
+        comodel_name='hr.employee', 
+        string='Driver', 
+        domain=[('is_driver', '=', True)]
+    )
+    is_driver = fields.Boolean(string='Is Driver', related='driver_id.is_driver', readonly=True)
+    driver_license = fields.Char(string='Driver License', related='driver_id.driver_license', readonly=True)
+    driver_license_expired_date = fields.Date(string='Driver License Expired Date', related='driver_id.driver_license_expired_date', readonly=True)
+    
         
     @api.constrains('departure', 'arrival')
     def _check_departure_arrival(self):

@@ -45,15 +45,17 @@
                         </div>
                         <group>
                             <group>
+                                
+                            </group>
+                            <group>
+                            </group>
+                            <group>
                                 <field name="capacity"/>
-                            </group>
-                            <group>
-                            </group>
-                            <group>
                                 <field name="date_of_issue"/>
                                 <field name="payment_type"/>
                             </group>
                             <group>
+                                <field name="driver_id"/>
                                 <field name="departure"/>
                                 <field name="arrival"/>
                             </group>
@@ -77,6 +79,22 @@
                                     </tree>
                                 </field>
                             </page>
+                             <page string="Driver">
+                                <div>
+                                    <h1>
+                                        <field name="driver_id" placeholder="Driver's Name" readonly="1" attrs="{'invisible': [('driver_id', '=', False)]}"/>
+                                    </h1>
+                                </div>
+                                <group>
+                                    <group>
+                                        <field name="driver_license"  attrs="{'invisible': [('driver_id', '=', False)]}" />
+                                        <field name="driver_license_expired_date" attrs="{'invisible': [('driver_id', '=', False)]}"/>
+                                    </group>
+                                </group>
+                                
+                            </page>
+
+                            
                         </notebook>
                     </sheet>
                 </form>
