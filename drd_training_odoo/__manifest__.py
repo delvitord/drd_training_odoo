@@ -19,7 +19,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','hr'],
+    'depends': ['base','hr','mail'],
 
     # always loaded
     'data': [
@@ -29,7 +29,11 @@
         'views/res_bus_view.xml',
         'views/bus_route_view.xml',
         'views/hr_employee_view.xml',
+        'views/baggage_baggage_view.xml',
         'views/menuitem.xml',
+        'data/sequence.xml',
+        'data/bus_data.xml',
+        'data/route_data.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

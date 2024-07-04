@@ -6,10 +6,34 @@
             <field name="model">hr.employee</field>
             <field name="inherit_id" ref="hr.view_employee_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//field[@name='coach_id']" position="after">
-                    <field name="is_driver"/>
+                <xpath expr="//notebook" position="inside">
+                    <page string="Driver Information">
+                        <group>
+                            <group>
+                                <field name="is_driver"/>
+                                <field name="driver_license"  attrs="{'invisible': [('is_driver', '=', False)]}" />
+                                <field name="driver_license_expired_date" attrs="{'invisible': [('is_driver', '=', False)]}"/>
+                            </group>
+                        </group>
+                    </page>
                 </xpath>
             </field>
         </record>
+
+        <record id="employee_driver_action" model="ir.actions.act_window">
+            <field name="name">Driver</field>
+            <field name="res_model">hr.employee</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('is_driver', '=', True)]</field>
+            <field name="context">{'default_is_driver': True}</field>
+        </record>
+
+        <menuitem
+            id="driver_menu"
+            name="Driver"
+            parent="hr.menu_hr_employee_payroll"
+            action="employee_driver_action"
+            sequence="2"
+        />
     </data>
 </odoo>

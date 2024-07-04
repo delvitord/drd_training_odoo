@@ -11,5 +11,39 @@
                 </tree>
             </field>
         </record>
+
+
+        <!-- Form View -->
+        <record model="ir.ui.view" id="bus_route_view_form">
+            <field name="name">bus.route.view.form</field>
+            <field name="model">bus.route</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <div class="oe_title"> 
+                            <h1> 
+                                <field name="name" placeholder="Route's Name"/> 
+                            </h1>
+                        </div>
+                        <group>
+                        </group>
+                        <notebook>
+                            <page string="Schedule">
+                                <field name="schedule_ids" readonly="1">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="date_of_issue"/>
+                                        <field name="departure"/>
+                                        <field name="arrival"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
     </data>
 </odoo>

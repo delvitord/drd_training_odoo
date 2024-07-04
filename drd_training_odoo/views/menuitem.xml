@@ -51,14 +51,14 @@
             id="configuration_menu"
             name="Configuration"
             parent="drd_training_odoo.transpotation_root_menu"
-            sequence="4"
+            sequence="99"
         />
         <menuitem
             id="bus_route_menu"
             name="Route"
             parent="drd_training_odoo.configuration_menu"
             action="bus_route_action"
-            sequence="5"
+            sequence="1"
         />
     </data>
 </odoo>

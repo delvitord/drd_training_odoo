@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <record model="bus.route" id="route_1">
+            <field name="name">Bandung - Jakarta</field>
+        </record>
+        <record model="bus.route" id="route_2">
+            <field name="name">Bandung - Cirebon</field>
+        </record>
+        <record model="bus.route" id="route_3">
+            <field name="name">Bandung - Surabaya</field>
+        </record>
+        <record model="bus.route" id="route_4">
+            <field name="name">Bandung - Yogyakarta</field>
+        </record>
+        <record model="bus.route" id="route_5">
+            <field name="name">Bandung - Semarang</field>
+        </record>
+        <record model="bus.route" id="route_5">
+            <field name="name">Jakarta - Malang</field>
+        </record>
+         <record model="bus.route" id="route_6">
+            <field name="name">Jakarta - Tasikmalaya</field>
+        </record>
+        <record model="bus.route" id="route_7">
+            <field name="name">Jakarta - Garut</field>
+        </record>
+        <record model="bus.route" id="route_8">
+            <field name="name">Jakarta - Cirebon</field>
+        </record>
+        <record model="bus.route" id="route_9">
+            <field name="name">Jakarta - Sertang</field>
+        </record>
+        <record model="bus.route" id="route_10">
+            <field name="name">Jakarta - Surabaya</field>
+        </record>
+    </data>
+</odoo>

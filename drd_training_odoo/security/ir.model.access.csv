@@ -3,3 +3,4 @@ access_bus_schedule,access_bus_schedule,model_bus_schedule,base.group_user,1,1,1
 access_res_passenger,access_res_passenger,model_res_passenger,base.group_user,1,1,1,1
 access_res_bus,access_res_bus,model_res_bus,base.group_user,1,1,1,1
 access_bus_route,access_bus_route,model_bus_route,base.group_user,1,1,1,1
+access_baggage_baggage,access_baggage_baggage,model_baggage_baggage,base.group_user,1,1,1,1
