@@ -16,11 +16,32 @@ class BusSchedule(models.Model):
     departure = fields.Datetime(string='Departure', required=True, tracking=True)
     arrival = fields.Datetime(string='Arrival', required=True, tracking=True)
     
-    baggage_ids = fields.One2many(comodel_name='baggage.baggage', inverse_name='schedule_id', string='Baggage')
-    bus_id = fields.Many2one(comodel_name='res.bus', string='Bus', required=True, tracking=True)
-    route_id = fields.Many2one(comodel_name='bus.route', string='Route', required=True)
-    passenger_ids = fields.Many2many(comodel_name='res.passenger', string='Passenger')
-    capacity = fields.Integer(string='Capacity', related='bus_id.capacity', readonly=True)
+    baggage_ids = fields.One2many(
+        comodel_name='baggage.baggage', 
+        inverse_name='schedule_id', 
+        string='Baggage'
+    )
+    bus_id = fields.Many2one(
+        comodel_name='res.bus', 
+        string='Bus', 
+        required=True, 
+        tracking=True,
+        domain=[('state', '=', 'ready')]
+    )
+    route_id = fields.Many2one(
+        comodel_name='bus.route', 
+        string='Route', 
+        required=True
+    )
+    passenger_ids = fields.Many2many(
+        comodel_name='res.passenger', 
+        string='Passenger'
+    )
+    capacity = fields.Integer(
+        string='Capacity', 
+        related='bus_id.capacity', 
+        readonly=True
+    )
     driver_id = fields.Many2one(
         comodel_name='hr.employee', 
         string='Driver', 
@@ -58,11 +79,28 @@ class BusSchedule(models.Model):
     
     def button_submit(self):
         self.state = 'submit'
+        if self.bus_id:
+            self.bus_id.state = 'ready'
 
     def button_run(self):
         self.state = 'ongoing'
+        if self.bus_id:
+            self.bus_id.state = 'depart'
 
     def button_done(self):
         self.state = 'done'
+        if self.bus_id:
+            self.bus_id.state = 'draft'
     
+    @api.onchange('state')
+    def _onchange_state(self):
+        if self.state == 'submit':
+            if self.bus_id:
+                self.bus_id.state = 'ready'
+        elif self.state == 'ongoing':
+            if self.bus_id:
+                self.bus_id.state = 'depart'
+        elif self.state == 'done':
+            if self.bus_id:
+                self.bus_id.state = 'mt'
     

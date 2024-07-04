@@ -10,6 +10,7 @@
                     <field name="name"/>
                     <field name="code"/>
                     <field name="capacity"/>
+                    <field name="state"/>
                 </tree>
             </field>
         </record>
