@@ -21,3 +21,12 @@ class Bus(models.Model):
         ('mt', 'Maintenance'),
         ('depart', 'Departure'),
     ], string='Status', default='draft', copy=False)
+    
+    def button_ready(self):
+        self.state = 'ready'
+
+    def button_mt(self):
+        self.state = 'mt'
+
+    def button_depart(self):
+        self.state = 'depart'

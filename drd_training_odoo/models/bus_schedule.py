@@ -64,5 +64,5 @@ class BusSchedule(models.Model):
 
     def button_done(self):
         self.state = 'done'
-        
+    
     
