@@ -15,3 +15,9 @@ class Bus(models.Model):
     
     schedule_ids = fields.One2many(comodel_name='bus.schedule', inverse_name='bus_id', string='Schedule')
     
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('ready', 'Ready'),
+        ('mt', 'Maintenance'),
+        ('depart', 'Departure'),
+    ], string='Status', default='draft', copy=False)
