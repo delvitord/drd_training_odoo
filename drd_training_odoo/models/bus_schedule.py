@@ -7,7 +7,7 @@ class BusSchedule(models.Model):
     _description = 'Bus Schedule'
     _inherit = ['mail.thread','mail.activity.mixin']
         
-    name = fields.Char(string='Name', required=True)
+    name = fields.Char(string='Name', default='New')
     date_of_issue = fields.Date(string='Schedule', default=fields.Datetime.now, readonly=True, tracking=True)
     payment_type = fields.Selection([
         ('cash', 'Cash'),
