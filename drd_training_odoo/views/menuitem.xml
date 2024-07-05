@@ -32,6 +32,7 @@
             parent="drd_training_odoo.transpotation_root_menu"
             action="passenger_action"
             sequence="1"
+            groups="drd_training_odoo.group_transport_staff"
         />
         <menuitem
             id="bus_schedule_menu"
@@ -39,6 +40,7 @@
             parent="drd_training_odoo.transpotation_root_menu"
             action="bus_schedule_action"
             sequence="2"
+            groups="drd_training_odoo.group_transport_driver,drd_training_odoo.group_transport_staff"
         />
         <menuitem
             id="bus_menu"
@@ -46,6 +48,7 @@
             parent="drd_training_odoo.transpotation_root_menu"
             action="bus_action"
             sequence="3"
+            groups="drd_training_odoo.group_transport_manager"
         />
         <menuitem
             id="configuration_menu"
@@ -59,6 +62,7 @@
             parent="drd_training_odoo.configuration_menu"
             action="bus_route_action"
             sequence="1"
+            groups="drd_training_odoo.group_transport_manager"
         />
     </data>
 </odoo>
