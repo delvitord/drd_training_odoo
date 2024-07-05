@@ -31,7 +31,6 @@
                             name="state" 
                             widget="statusbar" 
                             statusbar_visible="draft,submit,ongoing,done" 
-                            options="{'clickable': 1}"
                         />
                         <button 
                             name="button_submit" 
