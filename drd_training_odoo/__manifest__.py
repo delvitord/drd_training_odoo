@@ -24,6 +24,7 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'security/security.xml',
         'views/res_passenger_view.xml',
         'views/bus_schedule_view.xml',
         'views/res_bus_view.xml',
@@ -34,6 +35,7 @@
         'data/sequence.xml',
         'data/bus_data.xml',
         'data/route_data.xml',
+        'wizards/report_bus_problem_wizard_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

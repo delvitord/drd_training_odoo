@@ -1,4 +1,4 @@
-from odoo import models, fields 
+from odoo import models, fields, _
 
 class Bus(models.Model):
 
@@ -7,6 +7,7 @@ class Bus(models.Model):
     _sql_constraints = [
         ('bus_code_unique', 'unique(code)', 'Code must be unique')
     ]
+    _inherit = ['mail.thread','mail.activity.mixin']
     
     name = fields.Char(string='Name', required=True)
     code = fields.Char(string='Code')
@@ -30,3 +31,16 @@ class Bus(models.Model):
 
     def button_depart(self):
         self.state = 'depart'
+        
+    def report_bus_problem(self):
+        return {
+            'name': 'Bus Problem',
+            'view_type': 'form',
+            'view_mode': 'form',
+            'res_model': 'report.bus.problem.wizard',
+            'type': 'ir.actions.act_window',
+            'context': {
+                'default_bus_id': self.id
+            },
+            'target': 'new',
+        }

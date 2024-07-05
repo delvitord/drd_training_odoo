@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+        <record id="report_bus_problem_wizard_view" model="ir.ui.view">
+            <field name="name">report.bus.problem.wizard.view</field>
+            <field name="model">report.bus.problem.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Report Bus Problem">
+                    <group>
+                        <field name="bus_id" readonly="1"/>
+                        <field name="reason"/>
+                    </group>
+                </form>
+                <footer>
+                    <button name="report_problem" string="Report" type="object"/>
+                    <button string="Cancel" special="cancel" type="object"/>
+                </footer>
+            </field>
+        </record>
+    </data>
+</odoo>
