@@ -12,5 +12,6 @@ class ReportBusProblemWizard(models.TransientModel):
 
     def report_problem(self):
         self.bus_id.state = 'mt'
-        self.bus_id.message_post(body=self.reason)
+        message_body = "Problem: " + self.reason
+        self.bus_id.message_post(body=message_body)
         return {'type': 'ir.actions.act_window_close'}
