@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="subjects_view_smart_button" model="ir.ui.view">
+            <field name="name">subjects.view.smart.button</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <div name="button_box" position="inside">
+                    <button class="oe_stat_button" type="object" name="button_subject_lines" string="Subjects">
+                        <field string="Subjects" name="subject_line_ids" widget="statinfo"/>
+                    </button>
+                </div>
+            </field>
+        </record>
+
+
+        <record id="res_partner_view_form_inherit_nti_training_academic" model="ir.ui.view">
+            <field name="name">res.partner.view.form.inherit.nti.training.academic</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vat']" position="after">
+                    <field name="birthday"/>
+                    <field name="age"/>
+                    <field name="is_lecturer"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>
