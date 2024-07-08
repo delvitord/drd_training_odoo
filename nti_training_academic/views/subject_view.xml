@@ -14,6 +14,30 @@
             </field>
         </record>
 
+        <!-- Form View -->
+        <record id="subject_view_form" model="ir.ui.view">
+            <field name="name">subject.view.form</field>
+            <field name="model">subject.subject</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title" style="display: flex; justify-content: space-between; align-items: center;">
+                            <h1 style="flex: 1; text-align: left;">
+                                <field name="name" placeholder="Subject's Name"/>
+                            </h1>
+                            <div style="flex: 0 0 auto;">
+                                <field name="image" widget="image" alt="Avatar" options="{'size': [90, 90]}" style="margin-left: 40px;"/>
+                            </div>
+                        </div>
+                        <group>
+                            <field name="code"/>
+                            <field name="lecturer_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
         <!-- Kanban View -->
         <record id="subject_view_kanban" model="ir.ui.view">
             <field name="name">subject.view.kanban</field>
@@ -26,10 +50,8 @@
                     <field name="lecturer_id"/>
                     <templates>
                         <t t-name="kanban-box">
-                            <div class="oe_kanban_global_click" style="display: flex; align-items: center;">
-                                <div class="oe_kanban_image" style="margin-right: 16px;">
-                                    <img alt="Avatar" t-att-src="kanban_image('subject.subject', 'image', record.id)" style="max-width: 100px; max-height: 100px;"/>
-                                </div>
+                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
+                                <field name="image" class="o_kanban_image_fill_left d-block" preview_image="image" widget="background_image" options="{'zoom': true, 'zoom_delay': 1000}"/>
                                 <div class="oe_kanban_details">
                                     <ul>
                                         <li>

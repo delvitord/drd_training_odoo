@@ -11,11 +11,11 @@ class SubjectLine(models.Model):
     _name = 'subject.line'
     _description = 'Subject Line'
 
-    subject_id = fields.Many2one('subject.subject', string='Subject', required=True)
-    lecturer_id = fields.Many2one('res.partner', related='subject_id.lecturer_id', string='Lecturer')
+    subject_id = fields.Many2one(comodel_name='subject.subject', string='Subject', required=True)
+    lecturer_id = fields.Many2one(comodel_name='res.partner', related='subject_id.lecturer_id', string='Lecturer')
     start_hour = fields.Float(string='Start Hour', widget='float_time')
     end_hour = fields.Float(string='End Hour', widget='float_time')
-    class_id = fields.Many2one('class.class', string='Class')
+    class_id = fields.Many2one(comodel_name='class.class', string='Class')
     
     @api.onchange('start_hour')
     def _check_start_hour_format(self):
