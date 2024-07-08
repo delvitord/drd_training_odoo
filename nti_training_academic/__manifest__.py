@@ -29,7 +29,7 @@
         'views/class_view.xml',
         'views/subject_view.xml',
         'views/subject_line_view.xml',
-        'reports/report.xml',
+        'reports/class_report.xml',
         'views/menuitem.xml',
     ],
     # only loaded in demonstration mode
