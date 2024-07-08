@@ -5,8 +5,8 @@ class ResPartner(models.Model):
 
     birthday = fields.Date(string='Birthday')
     age = fields.Integer(string='Age', compute='_compute_age', store=True, readonly=True)
-    is_lecturer = fields.Boolean(string='Is Lecturer')
-    subject_line_ids = fields.One2many('subject.subject', 'lecturer_id', string='Subject Line')
+    is_lecturer = fields.Boolean(string='Is Lecturer', invisible=True)
+    subject_line_ids = fields.One2many('subject.subject', 'lecturer_id', string='Subject Line', invisible=True)
     class_ids = fields.Many2many('class.class', string='Classes')
     
     @api.depends('birthday')

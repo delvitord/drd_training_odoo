@@ -12,11 +12,12 @@
             <field name="res_model">res.partner</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[('is_lecturer', '=', True)]</field>
+            <field name="context">{'default_is_lecturer':True}</field>
         </record>
         <record id="subject_action" model="ir.actions.act_window">
             <field name="name">Subject</field>
             <field name="res_model">subject.subject</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
         <record id="class_action" model="ir.actions.act_window">
             <field name="name">Class</field>
