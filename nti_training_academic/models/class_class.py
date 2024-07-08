@@ -21,3 +21,5 @@ class Class(models.Model):
         inverse_name='class_id', 
         string='Subject Line'
     )
+    
+    

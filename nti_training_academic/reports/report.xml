@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Define the report action -->
+    <record id="class_report" model="ir.actions.report">
+        <field name="name">Class Report</field>
+        <field name="model">class.class</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">nti_training_academic.report_class</field>
+        <field name="report_file">nti_training_academic.report_class</field>
+        <field name="print_report_name">'Report of %s' % object.name</field>
+        <field name="binding_model_id" ref="model_class_class"/> 
+        <field name="binding_type">report</field>
+    </record>
+    
+    <template id="report_class">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h1><span t-field="doc.name"/></h1>
+                        <div class="row" style="margin-bottom: 40px;">
+                            <div class="col-6">
+                                <strong>Tanggal Efektif: </strong><span t-field="doc.date" style="margin-left: 20px;"/>
+                            </div>
+                            <div class="col-6">
+                                <strong>Penanggung Jawab: </strong><span t-field="doc.user_id.name" style="margin-left: 20px;"/>
+                            </div>
+                        </div>
+                        <h3>Mahasiswa</h3>
+                        <table class="table table-condensed">
+                            <thead style="background-color: #8496b0;">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.student_ids" t-as="student">
+                                    <tr>
+                                        <td><span t-field="student.name"/></td>
+                                        <td><span t-field="student.phone"/></td>
+                                        <td><span t-field="student.email"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+    
+                        <h3 style="margin-top: 40px;">Mata Kuliah</h3>
+                        <table class="table table-condensed">
+                            <thead style="background-color: #8496b0;">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Lecturer</th>
+                                    <th>Start Hour</th>
+                                    <th>End Hour</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="doc.subject_line_ids" t-as="subject">
+                                    <tr>
+                                        <td><span t-field="subject.subject_id.name"/></td>
+                                        <td><span t-field="subject.lecturer_id.name"/></td>
+                                        <td><t t-esc="subject.float_to_time(subject.start_hour)"/></td>
+                                        <td><t t-esc="subject.float_to_time(subject.end_hour)"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

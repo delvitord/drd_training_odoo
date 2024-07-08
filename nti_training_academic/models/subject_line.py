@@ -45,3 +45,9 @@ class SubjectLine(models.Model):
             if record.start_hour and record.end_hour:
                 if record.start_hour >= record.end_hour:
                     raise ValidationError("Start hour must be less than end hour.")
+                
+    @api.model
+    def float_to_time(self, float_val):
+        # Function untuk menampilkan format time di report
+        hours, remainder = divmod(float_val * 60, 60)
+        return "%02d:%02d" % (int(hours), int(remainder))
