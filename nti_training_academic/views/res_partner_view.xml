@@ -7,8 +7,8 @@
             <field name="inherit_id" ref="base.view_partner_form" />
             <field name="arch" type="xml">
                 <xpath expr="//div[@name='button_box']" position="inside">
-                    <button class="btn-primary" type="object" name="button_subject_lines" string="Subjects"
-                            attrs="{'invisible': [('is_lecturer', '=', False)]}" />
+                    <button class="oe_stat_button" type="object" name="button_subject_lines" string="Subjects"
+                            attrs="{'invisible': [('is_lecturer', '=', False)]}" icon="fa-book"/>
                 </xpath>
                 <!-- Ensure the field is present in the view -->
                 <xpath expr="//sheet" position="inside">
