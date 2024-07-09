@@ -11,6 +11,7 @@ class SubjectLine(models.Model):
     end_hour = fields.Float(string='End Hour', widget='float_time')
     class_id = fields.Many2one(comodel_name='class.class', string='Class')
     
+    # Function untuk cek format start hour
     @api.onchange('start_hour')
     def _check_start_hour_format(self):
         for record in self:
@@ -22,6 +23,7 @@ class SubjectLine(models.Model):
                 except Exception:
                     raise ValidationError("Invalid start hour format. Please use HH:MM format.")
 
+    # Function untuk cek format end hour
     @api.onchange('end_hour')
     def _check_end_hour_format(self):
         for record in self:
@@ -33,15 +35,16 @@ class SubjectLine(models.Model):
                 except Exception:
                     raise ValidationError("Invalid end hour format. Please use HH:MM format.")
                 
+    # Function untuk cek start hour < end hour
     @api.onchange('start_hour', 'end_hour')
     def _check_start_end_hour(self):
         for record in self:
             if record.start_hour and record.end_hour:
                 if record.start_hour >= record.end_hour:
                     raise ValidationError("Start hour must be less than end hour.")
-                
+    
+    # Function untuk menampilkan format time di report
     @api.model
     def float_to_time(self, float_val):
-        # Function untuk menampilkan format time di report
         hours, remainder = divmod(float_val * 60, 60)
         return "%02d:%02d" % (int(hours), int(remainder))
