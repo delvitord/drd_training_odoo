@@ -7,8 +7,8 @@ class SubjectLine(models.Model):
 
     subject_id = fields.Many2one(comodel_name='subject.subject', string='Subject', required=True)
     lecturer_id = fields.Many2one(comodel_name='res.partner', related='subject_id.lecturer_id', string='Lecturer')
-    start_hour = fields.Float(string='Start Hour', widget='float_time')
-    end_hour = fields.Float(string='End Hour', widget='float_time')
+    start_hour = fields.Float(string='Start Hour')
+    end_hour = fields.Float(string='End Hour')
     class_id = fields.Many2one(comodel_name='class.class', string='Class')
     
     # Function untuk cek format start hour
@@ -56,9 +56,3 @@ class SubjectLine(models.Model):
                 ])
                 if overlapping_subjects:
                     raise ValidationError("The subject time conflicts with another subject in the same class.")
-    
-    # Function untuk menampilkan format time di report
-    @api.model
-    def float_to_time(self, float_val):
-        hours, remainder = divmod(float_val * 60, 60)
-        return "%02d:%02d" % (int(hours), int(remainder))

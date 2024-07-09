@@ -5,8 +5,8 @@ class ResPartner(models.Model):
 
     birthday = fields.Date(string='Birthday')
     age = fields.Integer(string='Age', compute='_compute_age', store=True, readonly=True)
-    is_lecturer = fields.Boolean(string='Is Lecturer', invisible=True)
-    subject_line_ids = fields.One2many(comodel_name='subject.subject', inverse_name= 'lecturer_id', string='Subject Line', invisible=True)
+    is_lecturer = fields.Boolean(string='Is Lecturer')
+    subject_line_ids = fields.One2many(comodel_name='subject.subject', inverse_name= 'lecturer_id', string='Subject Line')
     
     @api.depends('birthday')
     def _compute_age(self):

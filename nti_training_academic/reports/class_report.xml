@@ -61,8 +61,8 @@
                                     <tr>
                                         <td><span t-field="subject.subject_id.name"/></td>
                                         <td><span t-field="subject.lecturer_id.name"/></td>
-                                        <td><t t-esc="subject.float_to_time(subject.start_hour)"/></td>
-                                        <td><t t-esc="subject.float_to_time(subject.end_hour)"/></td>
+                                        <td><span t-field="subject.start_hour" t-options="{'widget': 'float_time'}"/></td>
+                                        <td><span t-field="subject.end_hour" t-options="{'widget': 'float_time'}"/></td>
                                     </tr>
                                 </t>
                             </tbody>
