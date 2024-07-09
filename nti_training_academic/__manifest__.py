@@ -3,20 +3,19 @@
     'name': "Training Academic (Delvito)",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Subject, Class, Student, Lecturer, Schedule Management""",
 
     'description': """
-        Long description of module's purpose
+        This module is used to manage academic, including subject, class, student, lecturer, and schedule management.
     """,
 
-    'author': "My Company",
-    'website': "https://www.yourcompany.com",
+    'author': "NTI",
+    'website': "http://www.nti.co.id/",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/16.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Academic',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
