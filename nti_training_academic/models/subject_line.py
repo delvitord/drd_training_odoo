@@ -42,6 +42,20 @@ class SubjectLine(models.Model):
             if record.start_hour and record.end_hour:
                 if record.start_hour >= record.end_hour:
                     raise ValidationError("Start hour must be less than end hour.")
+                
+    # Function untuk cek apakah jadwal overlapping atau 
+    @api.constrains('start_hour', 'end_hour', 'class_id')
+    def _validate_time_conflict(self):
+        for record in self:
+            if record.start_hour and record.end_hour and record.class_id:
+                overlapping_subjects = self.env['subject.line'].search([
+                    ('class_id', '=', record.class_id.id),
+                    ('id', '!=', record.id),
+                    ('start_hour', '<', record.end_hour),
+                    ('end_hour', '>', record.start_hour)
+                ])
+                if overlapping_subjects:
+                    raise ValidationError("The subject time conflicts with another subject in the same class.")
     
     # Function untuk menampilkan format time di report
     @api.model
