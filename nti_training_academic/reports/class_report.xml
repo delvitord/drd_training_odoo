@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-
+    <!-- Report PDF -->
     <record id="class_report" model="ir.actions.report">
         <field name="name">Class Report</field>
         <field name="model">class.class</field>
@@ -11,7 +11,17 @@
         <field name="binding_model_id" ref="model_class_class"/> 
         <field name="binding_type">report</field>
     </record>
+
+    <!-- Report XLSX -->
+    <record id="class_xlsx_report" model="ir.actions.report">
+        <field name="name">Class XLSX Report</field>
+        <field name="model">class.class</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">nti_training_academic.class_xlsx_report</field>
+        <field name="binding_type">report</field>
+    </record>
     
+    <!-- Isi Report PDF -->
     <template id="report_class">
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="doc">
